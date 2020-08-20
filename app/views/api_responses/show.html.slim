@@ -1,0 +1,9 @@
+p#notice
+  = notice
+p
+  strong
+    | Json:
+  = @api_response.json
+= link_to 'Edit', edit_api_response_path(@api_response)
+|  | 
+= link_to 'Back', api_responses_path

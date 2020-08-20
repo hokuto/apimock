@@ -1,0 +1,15 @@
+= form_with(model: api_response, local: true) do |form|
+  - if api_response.errors.any?
+    #error_explanation
+      h2
+        = pluralize(api_response.errors.count, "error")
+        |  prohibited this api_response from being saved:
+      ul
+        - api_response.errors.full_messages.each do |message|
+          li
+            = message
+  .field
+    = form.label :json
+    = form.text_area :json, size: "100x15"
+  .actions
+    = form.submit
