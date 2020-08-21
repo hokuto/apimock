@@ -11,10 +11,10 @@ table.table.is-bordered
     - @api_responses.each do |api_response|
       tr
         td= api_response.id
-        td= api_response_url(api_response)
+        td= link_to nil, api_response_url(api_response, format: 'json')
         td
           pre= api_response.json
-        td= link_to 'Show JSON', api_response_path(api_response, format: 'json')
+        td= link_to 'Show JSON', api_response_url(api_response, format: 'json')
         td= link_to 'Edit', edit_api_response_path(api_response)
         td= link_to 'Destroy', api_response, method: :delete, data: { confirm: 'Are you sure?' }
 br
